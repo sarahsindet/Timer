@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+<!-- Styles block -->
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-+d4wMJSxEP3vzs2qZBElQRTZMXwgWH15Nyn2K/9XjKiHmh3sBuk1Un/IbcdMcYC4" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<body style="background-image: url('static/images/purple.webp')">
+
+<div class="container-fluid">
+    
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card" style="width: 18rem;">
+                <img class="card-img-top" <img src="../static/images/1234.jpg" class="center">
+                <div class="card-body">
+                  <h5 class="card-title">Nancy K. Muthinzi</h5>
+                  <p class="card-text">Welcome to 'My Blog'. A place to share ideas, thoughts and advice in this journey called life.</p>
+                  <a href="/blog" class="btn btn-primary">New Blog</a>
+                  <a href="/comment" class="btn btn-primary">Comment</a>
+
+                </div>
+        </div>
+    </div>    
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <h2>My Profile</h2>
+
+        <h3>About Me</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget suscipit eros, non imperdiet est. Nullam eu est ornare, porttitor turpis ut, bibendum ante. Nunc laoreet lectus eget bibendum tincidunt.</p>
+        
+    </div>
+                   
+    
+</div>
+</div>
+</body>
+
+{% endblock %}
