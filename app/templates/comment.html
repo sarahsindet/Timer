@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content%}
+<div class="container-fluid">
+  <div class="row">
+
+      {{wtf.quick_form(form)}}
+      {{simplemde.load}}
+
+    {% for comment in comment %}
+    <div class="col-sm-4">
+    <ul>
+      <p>{{comment.user}}</p>
+      <p>{{comment.blog_id}}</p>
+      <p>{{comment.date}}</p>
+    </ul>    
+    </div>
+    {% endfor %}
+    <div class="col-sm-8">
+      {{format_comment|safe}}
+    </div>
+  </div>
+</div>
+{%endblock%}

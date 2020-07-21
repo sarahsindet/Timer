@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class= "col-md-3"> </div>
+  <div class="col-md-6">
+    <div>
+        {{wtf.quick_form(form)}}
+        {{simplemde.load}}
+
+        {% for blog in blogs %}
+        <ul>
+            <p>{{blog.blog_title}}</p>
+            <p>{{blog.blog_content}}</p>
+            <p>{{blog.posted}}</p>
+        </ul>
+        {% endfor %}
+   </div>
+  </div>
+  <div class= "col-md-3"> </div>
+</div>
+</div>
+{% endblock %}
