@@ -1,22 +1,11 @@
-rom flask import render_template,redirect,url_for,abort
+from flask import render_template,redirect,url_for,abort
 from . import main
 from . forms import CommentForm,UpdateProfile,BlogForm
-from ..models import Comment, User, Blog, Role
+from ..models import User,Blog 
 from flask_login import login_required, current_user
 from .. import db,photos
 import markdown2  
 
-# #Ajax
-# @main.route('/signUp')
-# def signUp():
-#     return render_template('signUp.html')
-
-
-# @main.route('/signUpUser', methods=['POST'])
-# def signUpUser():
-#     user =  request.form['username'];
-#     password = request.form['password'];
-#     return json.dumps({'status':'OK','user':user,'pass':password});
 
 # Views
 @main.route('/')

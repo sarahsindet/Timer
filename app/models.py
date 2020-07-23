@@ -4,9 +4,6 @@ from flask_login import UserMixin
 from . import login_manager
 from datetime import datetime
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
 
 class Blog(db.Model):
     __tablename__ = 'blogs'
@@ -35,6 +32,10 @@ class User(UserMixin,db.Model):
     blog = db.relationship('Blog', backref='user', lazy='dynamic')
     comments = db.relationship('Comment',backref = 'user',lazy = "dynamic")
 
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+ 
     @property
     def password(self):
         raise AttributeError('You cannnot read the password attribute')
